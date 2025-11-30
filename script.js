@@ -1,5 +1,3 @@
-let crsrBlur = document.querySelector(".cursor-blur")
-let crsr = document.querySelector(".cursor")
 document.addEventListener("mousemove", function (dets) {
     gsap.to(".cursor", {
         left: dets.x,
@@ -11,14 +9,26 @@ document.addEventListener("mousemove", function (dets) {
     });
 });
 
-document.addEventListener("mousemove", (dets)=> {
-    crsr.style.left = dets.x+"px"
-    crsr.style.top = dets.y+"px"
-    crsrBlur.style.left = dets.x - 150 +"px"
-    crsrBlur.style.top = dets.y - 150 +"px"
-})
+const hamburger = document.querySelector("#hamburger-icon");
+const mobileNav = document.querySelector("#mobile-nav");
+const mobileNavClose = document.querySelector("#mobile-nav-close");
+let menuOpen = false;
 
+function openMenu() {
+    gsap.to(mobileNav, { y: "0%" });
+    menuOpen = true;
+}
 
+function closeMenu() {
+    gsap.to(mobileNav, { y: "-100%" });
+    menuOpen = false;
+}
+
+hamburger.addEventListener("click", () => {
+    menuOpen ? closeMenu() : openMenu();
+});
+
+mobileNavClose.addEventListener("click", closeMenu);
 
 gsap.to("#nav", {
     backgroundColor: "#000",

@@ -189,7 +189,7 @@ video {
 .scroller {
     white-space: nowrap;
     position: relative;
-    z-index: 3;
+    z-index: 5;
 }
 
 .scroller h4 {
@@ -245,6 +245,10 @@ video {
 /* Mobile devices */
 @media (max-width: 670px) {
 
+  .cursor, .cursor-blur {
+    display: none;
+  }
+
     #nav {
         padding: 0 20px;
         height: 80px;
@@ -289,5 +293,6 @@ video {
     .scroller h4 {
         font-size: 60px;
         -webkit-text-stroke: 1px #ffffff;
+        z-index: 11;
     }
 }

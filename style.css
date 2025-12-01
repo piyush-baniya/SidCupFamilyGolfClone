@@ -22,7 +22,7 @@ body {
   gap: 25px;
   position: fixed;
   justify-content: flex-start;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .cursor {
@@ -41,7 +41,7 @@ body {
   border-radius: 50%;
   position: fixed;
   filter: blur(100px);
-  z-index: 9;
+  z-index: 6;
 }
 
 #nav img {
@@ -185,7 +185,7 @@ video {
 }
 
 #page2 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   z-index: 3;
 }
@@ -227,6 +227,150 @@ video {
   }
 }
 
+
+#about-us {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 50px;
+  position: relative;
+  z-index: 10;
+}
+
+
+#about-us img {
+  height: 150px;
+  width: 150px;
+  border-radius: 40px;
+  object-fit: cover;
+  transition: all 0.2s linear;
+}
+
+#about-us img:hover {
+  scale: calc(1.1)
+}
+
+#about-us-in {
+  width: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+#about-us-in h3 {
+  font-size: 30px;
+  font-weight: 900;
+  padding-bottom: 10px;
+}
+
+
+#card-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  position: relative;
+  z-index: 9;
+}
+
+.white-dots {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  left: 70px;
+  bottom: 77%
+}
+
+.card {
+  height: 500px;
+  width: 24%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  transition: all ease 0.6s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.card h3 {
+  position: absolute;
+  bottom: 0;
+  font-weight: 900;
+  font-size: 28px;
+  padding: 20px;
+  width: 100%;
+  transition: all ease 0.5s;
+}
+
+#card1 {
+  background-image: url("./Assests/card1.avif");
+  overflow: hidden;
+}
+
+#card2 {
+  background-image: url("./Assests/card2.webp");
+}
+
+#card3 {
+  background-image: url("./Assests/card3.avif");
+  overflow: hidden;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #ade511;
+  padding: 50px 30px;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover h3 {
+  opacity: 0;
+}
+
+.overlay h4{
+  color: #000;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.overlay p {
+  color: #000;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1024px) {
   #nav {
     padding: 0 50px;
@@ -243,6 +387,25 @@ video {
 
   .scroller h4 {
     font-size: 90px;
+  }
+
+  #about-us {
+    flex-direction: column;
+    height: auto;
+    padding: 50px 0;
+    gap: 30px;
+  }
+
+  #about-us-in {
+    width: 80%;
+  }
+
+  #card-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .card {
+    width: 70%;
   }
 }
 
@@ -297,5 +460,23 @@ video {
   .scroller h4 {
     font-size: 60px;
     -webkit-text-stroke: 1px #ffffff;
+  }
+
+  #about-us {
+    padding: 0 20px;
+  }
+
+  #about-us-in {
+    width: 90%;
+  }
+
+  #about-us img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+  }
+
+  .card {
+    width: 80%;
   }
 }

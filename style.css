@@ -157,7 +157,7 @@ video {
   font-size: 90px;
   font-weight: 900;
   position: relative;
-  z-index: 4;
+  transform-style: preserve-3d;
 }
 
 #page1 h1::before {
@@ -166,8 +166,8 @@ video {
   color: black;
   top: -5px;
   left: -5px;
-  z-index: -2;
   -webkit-text-stroke: 1px #95c11e;
+  transform: translateZ(-1px);
 }
 
 #page1 h2 {
@@ -411,7 +411,9 @@ video {
 
   .overlay {
     border-radius: 20px;
+    padding: 0 20px;
   }
+
 }
 
 /* Mobile devices */

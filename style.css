@@ -406,6 +406,11 @@ video {
   }
   .card {
     width: 70%;
+    height: 250px;
+  }
+
+  .overlay {
+    border-radius: 20px;
   }
 }
 
